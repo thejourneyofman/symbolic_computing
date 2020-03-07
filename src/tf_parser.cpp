@@ -122,7 +122,7 @@ void tf_parser::run()
         assert(from != "result");
         vector<string> from_strs;
         split(from, from_strs, '_');
-        assert(from_strs.size() >= 2);
+        assert(from_strs.size() >= 1);
         vector<string> to_strs;
         split(to, to_strs, '_');
         assert(to_strs.size() >= 1);

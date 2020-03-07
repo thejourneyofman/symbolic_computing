@@ -1,5 +1,5 @@
 #include <iostream>
-#include<cstring>
+#include <cstring>
 
 #include "mytensorflow.h"
 #include "tf_parser.h"
@@ -7,12 +7,12 @@
 
 using namespace std;
 
-// Predefine five arithmetic symbols to meet four operations.
-// "+" : sum
+// Predefine four arithmetic symbols to meet four operations.
+// "+" : add
 // "*" : mul
 // "-" : min
 // "/" : div
-constexpr char * OPERATOR[] = { "+", "*", "-", "/" };
+char const * OPERATOR[] = { "+", "*", "-", "/" };
 
 int inputNum;
 shared_ptr<BinTree<char *>> tree = make_shared<BinTree<char *>>();
@@ -163,13 +163,13 @@ int main()
     mytf.variable("input_1");
     mytf.variable("input_2");
     mytf.variable("input_3");
-    mytf.tensor("input_0", "a_in_0");
-    mytf.tensor("input_1", "a_in_1");
-    mytf.tensor("input_2", "b_in_0");
-    mytf.tensor("input_3", "b_in_1");
-    mytf.tensor("a_out_0", "c_in_0");
-    mytf.tensor("b_out_0", "c_in_1");
-    mytf.tensor("c_out_0", "result");
+    mytf.tensor("input_0", "a_0");
+    mytf.tensor("input_1", "a_1");
+    mytf.tensor("input_2", "b_0");
+    mytf.tensor("input_3", "b_1");
+    mytf.tensor("a", "c_0");
+    mytf.tensor("b", "c_1");
+    mytf.tensor("c", "result");
 
     mytf.constant("3","input_0");
     mytf.constant("5","input_1");

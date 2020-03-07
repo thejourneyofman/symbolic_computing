@@ -33,7 +33,7 @@ class tf_parser
         function<void(int n)> input_callback_;
         function<void(string, string, string, string)> connection_callback_;
         function<void(string, string, string)> value_callback_;
-        void split(const string& s,vector<string>& sv,const char flag);
+        void split(const string& s,vector<string>& sv,const char sep);
 };
 
 #endif // TF_PARSER_H

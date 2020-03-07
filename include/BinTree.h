@@ -189,9 +189,9 @@ public:
 
     // Process the calulation of the arithmetic logics.
     // Recursively processing in DLR.
-    int calculate(const BTNode<T> * pNode)
+    double calculate(const BTNode<T> * pNode)
     {
-        int x, y, result;
+        double x, y, result;
         if ( IsOperator(pNode->value) )
         {
             x = calculate(pNode->left);
@@ -208,12 +208,18 @@ public:
                     result = x - y;
                     break;
                 case '/':
-                    result = x / y;
+                    try {
+                        if( y == 0 )
+                            throw "division by zero error.";
+                        result = x / y;
+                    } catch (const char* msg) {
+                        std::cerr << msg << std::endl;
+                    }
                     break;
             }
             return result;
         }
-        result = atoi(pNode->value);
+        result = atof(pNode->value);
         return result;
     }
 
