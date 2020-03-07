@@ -13,13 +13,13 @@ class tf_parser
     public:
         tf_parser(mytensorflow);
         virtual ~tf_parser();
-        void add_callback(std::function<void(std::string)> cb);
-        void mul_callback(std::function<void(std::string)> cb);
-        void min_callback(std::function<void(std::string)> cb);
-        void div_callback(std::function<void(std::string)> cb);
-        void input_callback(std::function<void(int)> cb);
-        void connection_callback(std::function<void(std::string, std::string, std::string, std::string)> cb);
-        void value_callback(std::function<void(std::string, std::string, std::string)> cb);
+        void add_callback(function<void(string)> cb);
+        void mul_callback(function<void(string)> cb);
+        void min_callback(function<void(string)> cb);
+        void div_callback(function<void(string)> cb);
+        void input_callback(function<void(int)> cb);
+        void connection_callback(function<void(string, string, string, string)> cb);
+        void value_callback(function<void(string, string, string)> cb);
         void run();
 
     protected:

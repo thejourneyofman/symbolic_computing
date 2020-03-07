@@ -127,7 +127,7 @@ void getValues(string a, string b, string c)
 }
 
 // Return if key is an operator symbol defined in OPERATOR.
-std::function<bool(const char*)> IsOperator = [](const char* key)
+function<bool(const char*)> IsOperator = [](const char* key)
 {
     for ( const auto& op:OPERATOR )
     {
@@ -141,7 +141,7 @@ std::function<bool(const char*)> IsOperator = [](const char* key)
 };
 
 // Return if key is an operator name defined in unit names.
-std::function<bool(const char*)> isUnitSymbol = [](const char* key) {
+function<bool(const char*)> isUnitSymbol = [](const char* key) {
     if ( strstr(key, "input") == nullptr ) {
          return true;
     } else {
@@ -171,11 +171,11 @@ int main()
     mytf.tensor("b", "c_1");
     mytf.tensor("c", "result");
 
-    mytf.constant("3","input_0");
-    mytf.constant("5","input_1");
-    mytf.constant("7","input_2");
-    mytf.constant("9","input_3");
-    mytf.constant("12","input_0");
+    mytf.constant("3.5","input_0");
+    mytf.constant("5.5","input_1");
+    mytf.constant("7.5","input_2");
+    mytf.constant("9.5","input_3");
+    mytf.constant("12.5","input_0");
 
     tf_parser tp(mytf);
     tp.add_callback(getAdd);

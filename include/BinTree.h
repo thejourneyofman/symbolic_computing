@@ -36,11 +36,11 @@ public:
         m_pTree = nullptr;
     }
 
-    void is_operator(std::function<bool(const T)> ip){
+    void is_operator(function<bool(const T)> ip){
         IsOperator = ip;
     }
 
-    void is_unitsymbol(std::function<bool(const T)> iu) {
+    void is_unitsymbol(function<bool(const T)> iu) {
         isUnitSymbol = iu;
     }
 
@@ -213,7 +213,7 @@ public:
                             throw "division by zero error.";
                         result = x / y;
                     } catch (const char* msg) {
-                        std::cerr << msg << std::endl;
+                        cerr << msg << endl;
                     }
                     break;
             }
@@ -259,8 +259,8 @@ private:
     map<string, BTNode<T> *> isolatedMap;
     map<string, string> m_pUnitMap;
     map<string, string> m_pInputMap;
-    std::function<bool(const T)> IsOperator;
-    std::function<bool(const T)> isUnitSymbol;
+    function<bool(const T)> IsOperator;
+    function<bool(const T)> isUnitSymbol;
 
 };
 

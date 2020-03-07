@@ -15,20 +15,20 @@ class mytensorflow
     public:
         mytensorflow();
         virtual ~mytensorflow();
-        void add_register(std::string a);
-        void mul_register(std::string a);
-        void min_register(std::string a);
-        void div_register(std::string a);
-        void variable(std::string a);
-        void tensor(std::string a, std::string b);
-        void constant(string a, std::string b);
+        void add_register(string a);
+        void mul_register(string a);
+        void min_register(string a);
+        void div_register(string a);
+        void variable(string a);
+        void tensor(string a, string b);
+        void constant(string a, string b);
 
     protected:
-        vector<std::string> add_symbol;
-        vector<std::string> mul_symbol;
-        vector<std::string> min_symbol;
-        vector<std::string> div_symbol;
-        vector<std::string> var_list;
+        vector<string> add_symbol;
+        vector<string> mul_symbol;
+        vector<string> min_symbol;
+        vector<string> div_symbol;
+        vector<string> var_list;
         vector<pair<string, string>> tensor_list;
         vector<pair<string, string>> constant_list;
 

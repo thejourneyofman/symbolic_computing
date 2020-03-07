@@ -31,35 +31,35 @@ void tf_parser::split(const string& s,vector<string>& sv,const char sep = ' ') {
 
 /// Register a callback function for a "+" operation
 /// :param #1 : operation name
-void tf_parser::add_callback(std::function<void(std::string)> cb)
+void tf_parser::add_callback(function<void(string)> cb)
 {
     add_callback_ = cb;
 }
 
 /// Register a callback function for a "*" operation
 /// :param #1 : operation name
-void tf_parser::mul_callback(std::function<void(std::string)> cb)
+void tf_parser::mul_callback(function<void(string)> cb)
 {
     mul_callback_ = cb;
 }
 
 /// Register a callback function for a "-" operation
 /// :param #1 : operation name
-void tf_parser::min_callback(std::function<void(std::string)> cb)
+void tf_parser::min_callback(function<void(string)> cb)
 {
     min_callback_ = cb;
 }
 
 /// Register a callback function for a "/" operation
 /// :param #1 : operation name
-void tf_parser::div_callback(std::function<void(std::string)> cb)
+void tf_parser::div_callback(function<void(string)> cb)
 {
     div_callback_ = cb;
 }
 
 /// Register a callback function for input variables
 /// :param #1 : the counts of the input variables
-void tf_parser::input_callback(std::function<void(int)> cb)
+void tf_parser::input_callback(function<void(int)> cb)
 {
     input_callback_ = cb;
 }
@@ -69,7 +69,7 @@ void tf_parser::input_callback(std::function<void(int)> cb)
 /// :param #2 : the input index
 /// :param #3 : the output name
 /// :param #4 : the output index
-void tf_parser::connection_callback(std::function<void(std::string, std::string, std::string, std::string)> cb)
+void tf_parser::connection_callback(function<void(string, string, string, string)> cb)
 {
     connection_callback_ = cb;
 }
@@ -78,7 +78,7 @@ void tf_parser::connection_callback(std::function<void(std::string, std::string,
 /// :param #1 : always "input"
 /// :param #2 : the input index
 /// :param #3 : value in string
-void tf_parser::value_callback(std::function<void(std::string, std::string, std::string)> cb)
+void tf_parser::value_callback(function<void(string, string, string)> cb)
 {
     value_callback_ = cb;
 }
